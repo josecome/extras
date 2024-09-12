@@ -1,0 +1,20 @@
+# Run in command line interface to use Kafka in Python environment
+pip install kafka-python
+
+# Run Zookeeper
+C:\kafka>.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+# Run Kafka
+C:\kafka\bin\windows>kafka-server-start.bat C:\kafka\config\server.properties
+
+# Set path
+C:\Users\COME>cd C:\kafka\bin\windows
+
+# Producer
+C:\kafka\bin\windows>kafka-console-producer.bat --topic TEST-TOPIC --broker-list localhost:9092
+>Test Message
+kafka-console-producer.bat --topic my_favorite_topic --broker-list localhost:9092
+my_favorite_topic
+
+# Consumer
+C:\kafka\bin\windows>kafka-console-consumer.bat --topic TEST-TOPIC --bootstrap-server localhost:9092
