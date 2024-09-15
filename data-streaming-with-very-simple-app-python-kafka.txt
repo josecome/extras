@@ -1,0 +1,16 @@
+# Run Zookeeper
+C:\kafka>.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+# Run Kafka
+C:\kafka\bin\windows>kafka-server-start.bat C:\kafka\config\server.properties
+
+# Consumer
+from kafka import KafkaConsumer
+consumer = KafkaConsumer('my_favorite_topic', bootstrap_servers='localhost:9092', api_version=(2, 4, 0))
+for msg in consumer:
+     print (msg)
+     
+# Producer
+from kafka import KafkaProducer
+producer = KafkaProducer(bootstrap_servers='localhost:9092', api_version=(2, 4, 0))
+producer.send('my_favorite_topic', b'some_message')
